@@ -1,22 +1,15 @@
-function formatName(user) {
-  return (
-    user.firstName + ' ' + user.lastName
-  );
-}
+lass Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { seconds: 0 };
+  }
 
-const user = {
-  firstName: 'Harper',
-  lastName: 'Perez',
-};
+  tick() {
+    this.setState(prevState => ({
+      seconds: prevState.seconds + 1
+    }));
+  }
 
-const element = (
-  <h1>Hello, {formatName(user)}!</h1>
-);
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
-
-const element =<h1> Hello, World!</h1>
-
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
