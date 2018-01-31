@@ -34,7 +34,7 @@ class Board extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.state = { value: 'Type some *markdown* here!' };
   }
-
+//Handles Change
   handleChange(e) {
     this.setState({ value: e.target.value });
   }
