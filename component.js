@@ -43,3 +43,10 @@ class Board extends React.Component {
     const md = new Remarkable();
     return { __html: md.render(this.state.value) };
   }
+
+
+  //Add an event listener
+  window.addEventListener('click', function(e) {
+  if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
+    e.preventDefault();
+  }
